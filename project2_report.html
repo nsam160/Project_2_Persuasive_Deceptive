@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 4</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Nghi Sam</strong> — <em>nvsam@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2><b>Proposition:</b><br><i>Rising female teritary enrollment over time show decline in population growth?</i></h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="for.png" alt="" />
+          <figcaption>
+            As female enrollment in tertiary education has steadily increased 
+            over the years, there has been a corresponding gradual decline in 
+            population growth rates. While fluctuations still occur—due to 
+            factors such as environmental changes or disease outbreaks not 
+            discussed here—the overall trend suggests a potential relationship 
+            between higher levels of female education and reduced population 
+            growth. Women who pursue higher education are more likely to 
+            prioritize career opportunities, which can delay marriage and 
+            childbirth, ultimately leading to lower fertility rates and 
+            slower population growth over time.
+          </figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>Selective Annotation (-0.5): Highlight only the points where a clear trend downward in the fluctuating population decline occur</li>
+          <li>Manipulating Data To Fit on Same Graph (1): One line have values ranging to 100%, while the others stayed within the 1% range, therefore the line with wider percentage range was transformed to proportion</li>
+          <li>Effective Colors (2): Chose pink to represent female and a more neutral black color to represent the population</li>
+          <li>Effective Axes Range (2): Stretch the graph wide to show changes are gradual over time, not steep</li>
+        </ul>
+
+        <p>
+          For this design, I went with a straightforward, trend line graph,
+          with some annotation highlighting certain trends. The reason I went with 
+          this design is because it makes it most easy for audience to understand the message 
+          and it gets the point across for my proposition. I've attempted to use 
+          a storytelling method as with the against proposition, but the feedback
+          I've recieved from it was not so great as many said it was confusing,
+          rather than persuasive. Other graphs that I attempted were bar graphs,
+          scatterplot, and boxplot, but they didn't work out because they were either too 
+          messy, like the scatterplot, showing no clear trends, or the graph 
+          does not show correlation well as it was on separate sub-figures.
+        </p>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="against.png" alt="" />
+          <figcaption>
+            As female enrollment in tertiary education has steadily increased
+            over the years, there has been a corresponding gradual increase 
+            in population growth. Educating women has improved their knowledge 
+            of childbirth safety and personal health, which in turn has lowered 
+            mortality rates and contributed to population growth.
+          </figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>Telling A Roundabout Story (-1.5): Involve other variables outside the ones that directly answer the question</li>
+          <li>Questionable Variable Choice for Population Growth (-2): Chose absolute growth from a starting date rather than percent growth annually to show higher increase than actual growth</li>
+          <li>Effective Color Choice (2): Choose non-greyscale color to show important variables to highlight, pink to represent female, and blue to represent world population</li>
+          <li>Data Transformation For Population Change (2): Took the total population of every country for every year and subtract it to the population of that country in 1970</li>
+          <li>Data Binning (-0.5): Datas were binned, through decades rather than a 1 year or 5 year mark, to show tremendous difference across categories</li>
+        </ul>
+
+        <p>
+          For this design, I went with a storytelling approach to make the design
+          most believable. If I use the same method as my for proposition, 
+          audience will most likely look suspiciously at this graph because the 
+          same data have to be used. Therefore, I must include reasons as to why
+          it is possible that population grow overall. Although I mentioned before that 
+          the downside of the storytelling method is that it is confusing, making audience
+          have doubts, it may be the best case here because to disprove something,
+          we always need an explanation as to why it is wrong. One downside of this
+          method is that direct correlation between variables are not plotted, but their 
+          relationships are shown in years. Other alternatives that I considered to fix
+          the correlation problem was scatterplot, but it looked too messy
+          and the trends were not that clear, so I just stick with the barplot to show 
+          the clear trends.
+        </p>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>
+          Across these two visualization, I merged 3 datasets, which are 
+          gender, climate, and health, from the World Bank dataset to get all 
+          the information that I needed. Then, I filtered out the rows to only 
+          include years after 1970. This is because I noticed that data are most 
+          likely to be missing across all the variables used if they are between
+          1960 and 1969. After that, I filtered the columns to only include the
+          necessary variables, like year, country name, morality rate, 
+          population growth rate, population amount, and rate of female in higher
+          education. Noticing that many columns are missing a lot of values, I 
+          decided to group by the country name, filtered out the countries with 
+          less than 30 values overall (60% of the data) per columns of information, 
+          and perform regression imputation on the rest of the data. The value 30 
+          was chosen so we can still have as much data as possible, while having enough 
+          data to fit a regression model to it without having too many errors.
+          The regression model was automatically chosen from 4 possible models,
+          linear, exponential, logarithmic, and quadratic, where the one with the lowest 
+          RMSE value is chosen. Regression imputation was performed separately on 
+          different columns groupby country name. After filling in missing data 
+          using the best regression model, only basic data transformation was performed, like conversion
+          from percent to proportion or making large numbers to be in units of millions.
+          Finally, before putting it into the final graphs, data were averaged out by groups of years
+          or decades.
+        </p>
+        <p>
+          The most difficult part of this project was to prove something that is not true.
+          I considered this to be difficult because we would either need a deep understanding 
+          of the data we are dealing with in order to filter it a certain way or we 
+          would have to spend days finding out where data can be manipulated. Additionally, 
+          somewhere in making this project, I got too immersed into making my visualization
+          most believable from both sides that I forgot the basic visualization
+          rules, simplicity. What was most straightforward in this project was 
+          coming up with a proposition. Although coming up with proposition takes
+          time to explore data to create a final one, it was the most simple step
+          out of the entire project because I had a basic idea of what I was looking 
+          for and I had prior knowledge to things going on around the world. What surprised
+          me in this project was how easily data can argue both sides of an argument
+          depending on how a person use it.
+        </p>
+        <p>
+          How I define 'ethical analysis and visualization' is to take into consideration
+          data transparency or any other moral reponsibility throughout the process of
+          analyzing and visualizing data. Any data manipulation must be reported 
+          and potential harm the visualization can make, must have disclaimers. However,
+          otherwise, 'acceptable' persuasive techniques, like graph annotation is encouraged.
+          The bounds that I draw between 'acceptable' persuasive choices vs. 'misleading' ones
+          all comes down to whether the lies is obvious or is it well-hidden behind other data
+          that audience deemed trustworthy. For example, simplifying complex information for 
+          clarity, as I did with the mean, choosing color to draw attention to details, as I did 
+          with pink, and highlighting important pattern without filtering underlying data, as I did with the annotation, 
+          can all be deemed as 'acceptable' persuasive choices. Examples of 'misleading' ones
+          can include exaggerating trends by truncating axes or over filtering data to only
+          show a clear trends and any other deviation from the trends are hidden.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
